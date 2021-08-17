@@ -47,7 +47,7 @@ body{
     transition: all 0.7s ease-in;
 }
 .food-carousel{
-    width:90%;
+    width:80%;
     margin:auto;
     overflow: hidden;
 }
