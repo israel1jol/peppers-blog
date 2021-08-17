@@ -43,15 +43,15 @@
                 <p class="category-name">{{ category.name }}</p>
             </div>
         {% elif category.name == 'Food' %}
-            <div class="w-100"  style="background-image:url('{% static 'mainblog/images/Food.jpg' %}'); height:70vh; background-position:center right; background-attachment: fixed;">
+            <div class="w-100"  style="background-image:url('{% static 'mainblog/images/food.jpg' %}'); height:70vh; background-position:center right; background-attachment: fixed;">
                 <p class="category-name">{{ category.name }}</p>
             </div>
         {% elif category.name == 'Travel' %}
-            <div class="w-100"  style="background-image:url('{% static 'mainblog/images/TravelB.jpg' %}'); height:70vh; background-position:center; background-attachment: fixed;">
+            <div class="w-100"  style="background-image:url('{% static 'mainblog/images/travelB.jpg' %}'); height:70vh; background-position:center; background-attachment: fixed;">
                 <p class="category-name">{{ category.name }}</p>
             </div>
         {% else%}
-            <div class="w-100"  style="background-image:url('{% static 'mainblog/images/about.jpg' %}'); height:70vh; background-position:center; background-attachment: fixed;">
+            <div class="w-100"  style="background-image:url('{% static 'mainblog/images/fashionB.jpg' %}'); height:70vh; background-position:center; background-attachment: fixed;">
                 <p class="category-name">{{ category.name }}</p>
             </div>
         {% endif %}
