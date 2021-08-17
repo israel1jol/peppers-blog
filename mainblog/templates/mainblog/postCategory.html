@@ -1,0 +1,19 @@
+{% extends 'base-post.html' %}
+{% block content %}
+
+    <div ><div class="bg-dark comment-tag">{{ posts|length }} in {{ category.name }}</div></div>
+     <div class='post-collective mx-auto' width="600px">
+            {% for post in posts %}
+               <div class='post-content'>
+                    <h3>{{ post.title }}</h3>
+                    <p class="badge badge-secondary disabled">{{ post.category }}</p>
+                    <hr>
+                    <div>
+                        <p class="lead">{{ post.descr }}<p>
+                        <p class='badge badge-light'>{{ post.pub_date }}</p>
+                    </div>
+                    <a class="btn btn-primary read-btn" href="{% url 'mainblog:detailpost' post.slug %}">Read More</a>
+                </div>
+            {% endfor %}
+        </div>
+{% endblock %}

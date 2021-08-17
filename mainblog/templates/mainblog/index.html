@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2 class='ml-auto bg-light p-2 mt-1'>RECENTS</h2>
+    <div class="container-fluid">
+        <div class='post-collective'>
+            {% for post in page_obj %}
+                <div class='post-content'>
+                    <h3>{{ post.title }}</h3>
+                    <p class="badge badge-secondary disabled">{{ post.category }}</p>
+                    <hr>
+                    <div>
+                        <p class="lead">{{ post.descr }}<p>
+                        <p class='badge badge-light'>{{ post.pub_date }}</p>
+                    </div>
+                    <a class="btn btn-primary read-btn" href="{% url 'mainblog:detailpost' post.slug %}">Read More</a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="pagination justify-content-center page-tab">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1">first</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+                </li>
+                {% endif %}
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last</a>
+                </li>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+
+    
+{% endblock %}

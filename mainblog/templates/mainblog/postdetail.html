@@ -1,0 +1,43 @@
+{% extends 'base-post.html' %}
+{% block content %}
+    <div class="m-3 p-3 br-2 bg-light">
+        <h2 class="font-weight-bold font-italic post-title">{{ post.title }}</h2> 
+        <small>{{ post.pub_date }} by {{ post.author }}</small>
+    </div>
+    <section class=''>
+        <p class="text-muted" style="font-size:4vh;">{{ post.body }}</p>
+    </section>
+
+     <div class='container-fluid'>
+        <div class="bg-dark comment-tag ">Comments</div>
+
+        <form method='POST' action="{% url 'mainblog:addcomment' post.slug %}">
+        {% csrf_token %}
+            <div class="form-group">
+                <label>Username: </label>
+                <input type='text' name='username' class='form-control w-50' required>
+            </div>
+            <div class="form-group">
+                <label>Email: </label>
+                <input type='email' name='email' class='form-control w-50' required>
+            </div>
+            <div class="form-group">
+                <label>Comment: </label>
+                <input type='text' name='message' class='form-control w-50' required>
+            </div>
+            <input type="submit" value="Post" class="btn btn-success btn-lg">
+        </form>
+
+        <ul class="list-group">
+            {% for c in comments %}
+                <li class="list-group-item m-3 w-50">
+                    <h4>{{ c.username }}</h4>
+                    <p>{{ c.message }}</p>
+                </li>
+                <br>
+            {% endfor %}
+        </div>
+
+        <br>
+    </div>
+{% endblock %}

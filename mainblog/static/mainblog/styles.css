@@ -1,0 +1,137 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.brand-logo{
+    height: 240px;
+    width: 80%;
+    margin: auto;
+    background-image: url('./images/blog_logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.read-btn{
+    position: relative;
+    bottom:10px;
+    right:10px;
+}
+.header-name{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.category-name{
+    font-size: 16pc;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 6vh;
+    color: whitesmoke;
+    text-shadow: 2px 4px 3px rgb(255, 255, 255);
+}
+.custom-link{
+    color: grey;
+    font-size: 20px;
+    border-left: 1px solid gray;
+    padding:0 40px;
+    transition: all 0.7s ease-in;
+}
+.m-link:hover{
+    text-decoration: none;
+}
+.unique-link{
+    color: grey;
+    font-size: 20px;
+    padding:0 40px;
+    transition: all 0.7s ease-in;
+}
+.food-carousel{
+    width:90%;
+    margin:auto;
+    overflow: hidden;
+}
+.food-carousel img{
+    height:80vh;
+}
+.post-collective{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.post-content{
+    min-width: 40%;
+    border-left: 5px solid rgba(30, 28, 31, 0.644);
+    box-shadow: rgba(0, 0, 0, 0.61) 0px 0px 6px;
+    margin: 30px;
+    transition: all 0.6s ease-out;
+    padding: 12px;
+}
+.page-tab{
+    margin-top:30px;
+    margin-bottom: 40px;
+}
+.post-content:hover{
+    color:whitesmoke;
+    border-radius: 4px;
+    background-color:rgba(30, 28, 31, 0.644);
+}
+.form-comment{
+    width:30%;
+    padding:10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px 10px 40px 40px;
+}
+.comment-tag{
+    width: 200px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 10px;
+    color: whitesmoke;
+    font-size: 20px;
+}
+input{
+    max-height: 50px;
+}
+.about-link{
+    color: rgb(20, 19, 19);
+    background-color: white;
+    font-size: 20px;
+    padding:5px;
+    transition: all 0.6s ease-out;
+    border-radius: 5px;
+    
+}
+.about-link:hover{
+    text-decoration: none;
+    background-color: black;
+    color: white;
+}
+@media(max-width:800px){
+    .custom-link{
+        border-left:none;
+    }
+    .category-name{
+        font-size: 9pc;
+    }
+    .post-title{
+        font-size: 4vh;
+    }
+}
+@media(max-width:500px){
+    .post-collective{
+        display: block;
+    }
+    .category-name{
+        padding-top: 20vh;
+        font-size: 6pc;
+    }
+    #socials{
+        visibility: hidden;
+    }
+}
+@media(max-width:350px){
+    .category-name{
+        padding-top: 20vh;
+        font-size: 4pc;
+    }
+}
