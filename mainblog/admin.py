@@ -9,5 +9,6 @@ class PostAdmin(admin.ModelAdmin):
     inlines = [CommentInline]
 
 admin.site.register(Post, PostAdmin)
+admin.site.register(Category)
 
 

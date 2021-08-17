@@ -116,6 +116,9 @@ input{
     .post-title{
         font-size: 4vh;
     }
+    .food-carousel{
+        height:60vh;
+    }
 }
 @media(max-width:500px){
     .post-collective{
