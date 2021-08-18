@@ -3,17 +3,22 @@ import django_heroku
 import dj_database_url
 from decouple import config
 from pathlib import Path
+import environ
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 import os
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'oern0in*&N9U;4568botvutt7^R435c\(&rvt6"kohyYB7cOo,or^;&*^fc(o&p":<{(u^r5{oy$C6V8^v%&V7uoyrx%$e&xvrewvOtT6&oexCV7V%(*^%$B&uvtvc&**bptv&VRCtyrTY09')
 
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+
+DEBUG = env('DJANGO_DEBUG')
 
 # DEBUG = True
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
+SECRET_KEY = env('SECRET_KEY')
 
 ALLOWED_HOSTS = ['peppers-blog.herokuapp.com', '']
 
